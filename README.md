@@ -127,7 +127,7 @@ To run GPT4All in python, see the new [official Python bindings](https://github.
 The old bindings are still available but now deprecated. They will not work in a notebook environment.
 To get running using the python client with the CPU interface, first install the [nomic client](https://github.com/nomic-ai/nomic) using `pip install nomic`
 Then, you can use the following script to interact with GPT4All:
-```
+```python
 from nomic.gpt4all import GPT4All
 m = GPT4All()
 m.open()
@@ -141,7 +141,7 @@ The setup here is slightly more involved than the CPU model.
 2. run `pip install nomic` and install the additional deps from the wheels built [here](https://github.com/nomic-ai/nomic/tree/main/bin)
 
 Once this is done, you can run the model on GPU with a script like the following:
-```
+```python
 from nomic.gpt4all import GPT4AllGPU
 m = GPT4AllGPU(LLAMA_PATH)
 config = {'num_beams': 2,
@@ -213,14 +213,14 @@ You can reproduce our trained model by doing the following:
 
 Clone the repo
 
-```
+```bash
 git clone --recurse-submodules https://github.com/nomic-ai/gpt4all.git
 git submodule update --init
 ```
 
 Setup the environment
 
-```
+```bash
 python -m pip install -r requirements.txt
 
 cd ../peft
